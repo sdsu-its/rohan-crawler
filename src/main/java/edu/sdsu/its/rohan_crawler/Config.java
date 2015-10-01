@@ -22,6 +22,7 @@ public class Config {
     private String db_password;
     private String db_decay_age;
     private List<String> file_whitelist;
+    private String starting_path;
 
     /**
      * Load the configuration file and set the member variables used in the getters.
@@ -59,6 +60,7 @@ public class Config {
         db_password = prop.getProperty("db_password");
         db_decay_age = prop.getProperty("db_decay_age");
         file_whitelist = Arrays.asList(prop.getProperty("file_whitelist").split("\\s*,\\s*"));
+        starting_path = prop.getProperty("starting_path");
     }
 
     public static void main(String[] args) {
@@ -92,5 +94,9 @@ public class Config {
 
     public List<String> getFile_whitelist() {
         return file_whitelist;
+    }
+
+    public String getStarting_path() {
+        return starting_path;
     }
 }

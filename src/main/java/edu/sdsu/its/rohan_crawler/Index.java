@@ -27,7 +27,7 @@ public class Index {
     }
 
     public static void main(final String[] args) {
-        add_to_db(new Index().list_files("/nas/streaming/faculty/ondemand/user/"));
+        add_to_db(new Index().list_files(new Config().getStarting_path()));
         DB.getInstance().clean();
     }
 
